@@ -1,0 +1,72 @@
+﻿<Window x:Class="GoodMorning.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodMorning"
+        mc:Ignorable="d"
+        Title="Good Morning" Height="800" Width="1069.6">
+    <Grid Margin="0,0,3.6,-19.6">
+        <ListBox x:Name="tasksList" HorizontalAlignment="Left" Height="331" Margin="101,89,0,0" VerticalAlignment="Top" Width="256">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Time, StringFormat=t,  ConverterCulture=pl}"/>
+                        <TextBlock Text="   "/>
+                        <TextBlock Text="{Binding Tittle}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem x:Name="detailsMenu" Header="Details" Click="detailsMenu_Click"/>
+                    <MenuItem x:Name="editMenu" Header="Edit" Click="editMenu_Click"/>
+                    <MenuItem x:Name="deleteMenu" Header="Delete" Click="deleteMenu_Click"></MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <Label x:Name="currentDayLabel" Content="" HorizontalAlignment="Center" Margin="146,58,745.6,0" VerticalAlignment="Top" Width="168"/>
+        <Button x:Name="prevDayButton" Content="&lt;" HorizontalAlignment="Left" Margin="100,64,0,0" VerticalAlignment="Top" Width="31" IsCancel="True" Height="20" Click="prevDayButton_Click" RenderTransformOrigin="0.5,0.5">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.193"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="nextDayButton" Content="&gt;" HorizontalAlignment="Left" Margin="325,64,0,0" VerticalAlignment="Top" Width="30" IsCancel="True" Height="20" Click="nextDayButton_Click"/>
+        <Button x:Name="addTaskButton" Content="Add Task" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" Width="94" Click="addTaskButton_Click" IsCancel="True" Height="25"/>
+        <TextBlock x:Name="DescrTextBlock" HorizontalAlignment="Left" Margin="47,402,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="62" Width="159"/>
+        <Grid HorizontalAlignment="Left" Height="707" Margin="486,16,0,0" VerticalAlignment="Top" Width="564">
+            <ListBox x:Name="newsListBox" HorizontalAlignment="Left" Height="705" Margin="-9,32,-67,-30" VerticalAlignment="Top" Width="570" RenderTransformOrigin="0.5,0.5" SelectionChanged="newsListBox_SelectionChanged">
+                <ListBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-0.085"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ListBox.RenderTransform>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Margin="3" Source="{Binding urlToImage}" Width="50" Height="50"/>
+                            <TextBlock Text="{Binding title}" VerticalAlignment="Bottom"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+        <Image x:Name="euroImage" HorizontalAlignment="Left" Height="100" Margin="34,484,0,0" VerticalAlignment="Top" Width="100" Source="/GoodMorning;component/Resources/Symbols_euro.png"/>
+        <Image x:Name="poundImage" HorizontalAlignment="Left" Height="100" Margin="186,484,0,0" VerticalAlignment="Top" Width="100" Source="/GoodMorning;component/Resources/Symbols_pound.png"/>
+        <Image x:Name="dollarImage" HorizontalAlignment="Left" Height="100" Margin="336,484,0,0" VerticalAlignment="Top" Width="100" Source="/GoodMorning;component/Resources/Symbols_dollar.png"/>
+        <Label x:Name="euroLabel" Content="" HorizontalAlignment="Left" Margin="47,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.297"/>
+        <Label x:Name="poundLabel" Content="" HorizontalAlignment="Left" Margin="197,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.297"/>
+        <Label x:Name="dollarLabel" Content="" HorizontalAlignment="Left" Margin="347,604,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.615,-0.297"/>
+
+    </Grid>
+
+</Window>

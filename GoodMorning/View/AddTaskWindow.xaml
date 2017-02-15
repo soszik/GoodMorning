@@ -1,0 +1,22 @@
+﻿<Window x:Class="GoodMorning.AddTaskWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GoodMorning"
+        mc:Ignorable="d"
+        Title="Add new task" Height="300" Width="247.122">
+    <Grid Margin="0,0,3.8,0.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="46*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="tittleBox" HorizontalAlignment="Left" Height="23" Margin="32,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="descrBox" HorizontalAlignment="Left" Height="72" Margin="32,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="hourBox" HorizontalAlignment="Left" Margin="32,23,0,0" VerticalAlignment="Top" Width="36" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="minBox" HorizontalAlignment="Left" Margin="65.603,23,0,0" VerticalAlignment="Top" Width="40" Grid.Column="1"/>
+        <Button x:Name="button" Content="Ok" HorizontalAlignment="Left" Margin="32,226,0,0" VerticalAlignment="Top" Width="75" Click="button_Click" Grid.ColumnSpan="2"/>
+        <Button x:Name="button1" Content="Cencel" HorizontalAlignment="Left" Margin="91.603,226,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click" Grid.Column="1"/>
+
+    </Grid>
+</Window>
